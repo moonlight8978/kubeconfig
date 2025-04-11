@@ -6,7 +6,6 @@ before:
 
 builds:
   - binary: kubecfg
-    main: ./bin
     env:
       - CGO_ENABLED=0
     goos:
