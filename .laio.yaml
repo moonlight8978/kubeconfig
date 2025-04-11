@@ -1,0 +1,12 @@
+name: kubeconfig
+
+windows:
+  - name: code
+    panes:
+      - name: Editor
+        flex: 100
+        commands:
+          - command: $EDITOR
+        focus: true
+      - flex: 35
+
