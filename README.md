@@ -4,7 +4,47 @@ A tool for managing and merging multiple kubeconfig files.
 
 ## Installation
 
-### Using Make Install (Recommended)
+### Option 1: Download binary
+
+Download the pre-compiled binary from the [releases page](https://github.com/moonlight8978/kubeconfig/releases/latest) and add it to your PATH.
+
+#### Linux and macOS
+
+```bash
+# Replace X.Y.Z with the latest version
+curl -L https://github.com/moonlight8978/kubeconfig/releases/download/vX.Y.Z/kubeconfig_X.Y.Z_Linux_x86_64.tar.gz | tar xz
+sudo mv kubeconfig /usr/local/bin/
+```
+
+#### Windows (using PowerShell)
+
+```powershell
+# Replace X.Y.Z with the latest version
+Invoke-WebRequest -Uri https://github.com/moonlight8978/kubeconfig/releases/download/vX.Y.Z/kubeconfig_X.Y.Z_Windows_x86_64.zip -OutFile kubeconfig.zip
+Expand-Archive -Path kubeconfig.zip -DestinationPath .
+mv .\kubeconfig.exe $Env:USERPROFILE\bin\
+# Make sure $Env:USERPROFILE\bin is in your PATH
+```
+
+### Option 2: Using Go Install
+
+If you have Go installed, you can use the `go install` command:
+
+```bash
+# Install the latest version
+go install github.com/moonlight8978/kubeconfig@latest
+```
+
+Or to install a specific version:
+
+```bash
+# Install a specific version
+go install github.com/moonlight8978/kubeconfig@vX.Y.Z
+```
+
+**Note:** Make sure your `$GOPATH/bin` is in your PATH.
+
+### Option 3: Using Make Install (Recommended)
 
 ```bash
 # Clone the repository
@@ -21,7 +61,7 @@ Make sure your `$GOPATH/bin` is in your PATH:
 export PATH=$PATH:$(go env GOPATH)/bin
 ```
 
-### Alternative: Manual Installation
+### Option 4: Manual Installation
 
 ```bash
 # Clone the repository
